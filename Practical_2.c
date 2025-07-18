@@ -24,7 +24,7 @@ void main()
         }
     }
 
-    printf("Enter operator (+, -, *, /): ");
+    printf("Enter operator (+, -, *, t): ");
     scanf(" %c", &op);
 
     switch (op)
@@ -63,6 +63,30 @@ void main()
                     {
                         arr3[i][j] += arr1[i][k] * arr2[k][j];
                     }
+                    printf("%d ", arr3[i][j]);
+                }
+                printf("\n");
+            }
+            break;
+
+        case 't':
+            for(i = 0; i < 3; i++) 
+            {
+                for(j = 0; j < 3; j++) 
+                {
+                    printf("%d ", arr1[i][j]);
+                }
+                printf("\n");
+            }
+
+            printf("Transpose is: \n");
+
+            for(i = 0; i < 3; i++) 
+            {
+                for(j = 0; j < 3; j++) 
+                {
+                    arr3[i][j] = arr1[j][i];
+
                     printf("%d ", arr3[i][j]);
                 }
                 printf("\n");

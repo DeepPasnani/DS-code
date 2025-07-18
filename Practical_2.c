@@ -4,7 +4,7 @@ void main()
 {
     char op;
     int i, j;
-    int arr1[2][2], arr2[2][2], arr3[2][2];
+    int arr1[3][3], arr2[3][3], arr3[3][3];
 
     for(i = 0; i < 3; i++) 
     {
@@ -58,23 +58,11 @@ void main()
             {
                 for(j = 0; j < 3; j++) 
                 {
+                    arr3[i][j] = 0;
                     for(int k = 0; k < 3; k++) 
                     {
                         arr3[i][j] += arr1[i][k] * arr2[k][j];
                     }
-                printf("\n");
-            }
-            break;
-
-        case '/': 
-            for(i = 0; i < 3; i++) 
-            {
-                for(j = 0; j < 3; j++) 
-                {
-                    if (arr2[i][j] != 0)
-                        arr3[i][j] = arr1[i][j] / arr2[i][j];
-                    else
-                        arr3[i][j] = 0;
                     printf("%d ", arr3[i][j]);
                 }
                 printf("\n");

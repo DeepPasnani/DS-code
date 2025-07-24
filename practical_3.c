@@ -56,53 +56,57 @@ int main()
     int value, top = -1, num;
     int stack[SIZE];
     char op;
-    printf("Enter (a,b,c,d) for (push,pop,peek,display): ");
-    scanf("%c", &op);
-    switch(op)
+    printf("Enter the number of values you want to push : ");
+    scanf("%d", &num);
+    for(int i = 0; i < num; i++)
     {
-        case 'a':
-            printf("Enter the number of values you want to push : ");
-            scanf("%d", &num);
-            for(int i = 0; i < num; i++)
-            {
-                printf("Enter value to push: ");
-                scanf("%d", &value);
-                push(stack, value);
-            }
-            break;
+        printf("Enter value to push: ");
+        scanf("%d", &value);
+        push(stack, value);
+    }
+    printf("Do you want to continue ? (y/n) : ");
+    char choice_1;
+    scanf(" %c", &choice_1);
+    if(choice_1 == 'y' || choice_1 == 'Y')
+    {
+        printf("Enter (a,b,c) for (pop,peek,display): ");
+        scanf(" %c", &op);
+        switch(op)
+        {
+            case 'a':
+                printf("Enter the number of times you want to pop : ");
+                scanf("%d", &num);
+                for(int i = 0; i < num; i++)
+                {
+                    pop(stack, value);
+                }
+                printf("No. of Popped = %d.\n", num);
+                break;
             
-        case 'b':
-            printf("Enter the number of times you want to pop : ");
-            scanf("%d", &num);
-            for(int i = 0; i < num; i++)
-            {
-                printf("Enter value to pop: ");
-                scanf("%d", &value); 
-                pop(stack, value);
-            }
-            printf("No. of Popped = %d.\n", num);
-            break;
+            case 'b':
+                value = peek(stack);
+                if (value != -1)
+                {
+                    printf("Top value: %d\n", value);
+                }
+                else
+                {
+                    printf("Stack is empty, no top value.\n");
+                }
+                break;
             
-        case 'c':
-            value = peek(stack);
-            if (value != -1)
-            {
-                printf("Top value: %d\n", value);
-            }
-            else
-            {
-                printf("Stack is empty, no top value.\n");
-            }
-            break;
-            
-        case 'd':
-            display(stack);
-            break;
+            case 'c':
+                display(stack);
+                break;
+        }
+    }
+    else
+    {
     }
     printf("Do you want to see the whole stack? (y/n): ");
-    char choice;
-    scanf(" %c", &choice);
-    if (choice == 'y' || choice == 'Y')
+    char choice_2;
+    scanf(" %c", &choice_2);
+    if (choice_2 == 'y' || choice_2 == 'Y')
     {
         display(stack);
     }

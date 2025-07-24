@@ -91,7 +91,7 @@ int main()
                 }
                 else
                 {
-                    printf("Stack is empty, no top value.\n");
+                    printf("Empty Stack.\n");
                 }
                 break;
             

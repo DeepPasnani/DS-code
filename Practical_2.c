@@ -79,7 +79,7 @@ void main()
                 printf("\n");
             }
 
-            printf("Transpose is: \n");
+            printf("Transpose of the asked matrix is: \n");
 
             for(i = 0; i < 3; i++) 
             {

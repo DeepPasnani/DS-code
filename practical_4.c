@@ -67,8 +67,6 @@ int main()
             {
                 result[j++] = pop();
             }
-            if (top != -1 && stack[top] == '(')
-                pop();
         } 
         else 
         {

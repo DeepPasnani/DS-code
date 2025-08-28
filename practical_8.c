@@ -162,7 +162,8 @@ void displayList()
     printf("NULL\n");
 }
 
-int main() {
+int main() 
+{
     int choice, info;
 
     while (1) {

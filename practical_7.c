@@ -63,7 +63,7 @@ int main()
 {
     int choice;
     double value;
-    int n; // Declare n outside the switch statement
+    int n;
 
     while(1)
     {

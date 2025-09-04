@@ -3,14 +3,14 @@
 
 #define SIZE 5
 
-double queue[SIZE];
+int queue[SIZE];
 int front=-1, rear=-1;
 
-void enqueue(double value)
+void enqueue(int value)
 {
-    if((rear + 1) % SIZE == front)
+    if(rear == SIZE - 1 && front == 0 || front == rear + 1)
     {
-        printf("Overflow. Queue is full.\n");
+        printf("Overflow.\n");   
         return;
     }
     else if(front == -1)
@@ -19,7 +19,7 @@ void enqueue(double value)
     }
     else
     {
-        rear = (rear + 1) % SIZE;
+        rear ++;
     }
     queue[rear] = value;
 }
@@ -28,7 +28,7 @@ void dequeue()
 {
     if(front == -1)
     {
-        printf("Underflow. Queue is empty.\n");
+        printf("Underflow.\n");
         return;
     }
     if(front == rear)
@@ -37,7 +37,7 @@ void dequeue()
     }
     else
     {
-        front = (front + 1) % SIZE;
+        front++;
     }
 }
 
@@ -52,17 +52,17 @@ void display()
     int i = front;
     while(i != rear)
     {
-        printf("%lf ", queue[i]);
-        i = (i + 1) % SIZE;
+        printf("%d ", queue[i]);
+        i++;
     }
-    printf("%lf", queue[i]);
+    printf("%d", queue[i]);
     printf("\n");
 }
 
 int main()
 {
     int choice;
-    double value;
+    int value;
     int n;
 
     while(1)

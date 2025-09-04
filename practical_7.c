@@ -76,9 +76,10 @@ int main()
             case 1:
                 printf("How many times you want to enqueue: ");
                 scanf("%d", &n);
-                for(int i = 0; i < n; i++) {
+                for(int i = 0; i < n; i++) 
+                {
                     printf("Enter value to enqueue: ");
-                    scanf("%lf", &value);
+                    scanf("%d", &value);
                     enqueue(value);
                 }
                 break;
